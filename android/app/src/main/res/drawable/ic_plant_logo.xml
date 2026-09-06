@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Leaf 1 -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M60,30 Q45,40 45,55 Q45,70 60,75 Q75,70 75,55 Q75,40 60,30z"/>
+    <!-- Leaf 2 -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M60,40 Q50,50 50,60 Q50,70 60,75 Q70,70 70,60 Q70,50 60,40z"/>
+    <!-- Stem -->
+    <path
+        android:fillColor="#7CB342"
+        android:strokeWidth="4"
+        android:strokeColor="#558B2F"
+        android:pathData="M60,75 L60,100"/>
+    <!-- Pot -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M45,95 L45,105 Q45,110 50,110 L70,110 Q75,110 75,105 L75,95 z"/>
+</vector>

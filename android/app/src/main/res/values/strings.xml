@@ -1,0 +1,186 @@
+<resources>
+    <string name="app_name">Smart Farming</string>
+    
+    <!-- Authentication -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_to_account">Login to your account</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="dont_have_account">Don\'t have an account? Register</string>
+    <string name="already_have_account">Already have an account? Login</string>
+    
+    <!-- Registration -->
+    <string name="farmer_registration">Farmer Registration</string>
+    <string name="create_account">Create Account</string>
+    <string name="join_smart_farming">Join the smart farming community</string>
+    <string name="full_name">Full Name</string>
+    <string name="village_location">Village/Location</string>
+    <string name="confirm_password">Confirm Password</string>
+    
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_weather">Weather</string>
+    <string name="nav_ai_tools">AI Tools</string>
+    <string name="nav_market">Market</string>
+    <string name="nav_profile">Profile</string>
+    
+    <!-- Dashboard -->
+    <string name="dashboard">Dashboard</string>
+    <string name="welcome_farmer">Welcome, %1$s!</string>
+    <string name="today_weather">Today\'s Weather</string>
+    <string name="crop_health">Crop Health</string>
+    <string name="good_condition">Good Condition</string>
+    <string name="weather_alert">Weather Alert</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="all_features">All Features</string>
+    
+    <!-- Weather -->
+    <string name="weather_and_alerts">Weather &amp; Alerts</string>
+    <string name="current_weather">Current Weather</string>
+    <string name="day_forecast">7-Day Forecast</string>
+    <string name="disaster_alerts">Weather Alerts &amp; Tips</string>
+    <string name="prevention_tips">General Disaster Prevention</string>
+    
+    <!-- AI Tools -->
+    <string name="ai_tools">AI Tools</string>
+    <string name="disease_detection">Disease Detection</string>
+    <string name="ai_scan_leaves">AI Scan Leaves</string>
+    <string name="soil_analysis">Soil Analysis</string>
+    <string name="test_soil_health">Test Soil Health</string>
+    <string name="crop_recommendation">Crop Recommendation</string>
+    <string name="best_crops">Best Crops</string>
+    <string name="fertilizer_recommendation">Fertilizer Recommendation</string>
+    <string name="get_advice">Get Advice</string>
+    <string name="smart_advisory">Smart Farming Advisory</string>
+    <string name="lifecycle_guidance">Lifecycle Guidance</string>
+    
+    <!-- Disease Detection -->
+    <string name="plant_disease_detection">Plant Disease Detection</string>
+    <string name="ai_powered_diagnosis">AI-Powered Diagnosis</string>
+    <string name="how_to_use">How to Use</string>
+    <string name="capture_photo">Capture Photo</string>
+    <string name="upload_from_gallery">Upload from Gallery</string>
+    <string name="disease_detected">Disease Detected</string>
+    <string name="organic_remedies">Organic Remedies</string>
+    <string name="chemical_treatment">Chemical Treatment</string>
+    <string name="prevention_tips_label">Prevention Tips</string>
+    <string name="scan_another_plant">Scan Another Plant</string>
+    
+    <!-- Soil Analysis -->
+    <string name="soil_health_status">Soil Health Status</string>
+    <string name="enter_soil_parameters">Enter Soil Parameters</string>
+    <string name="analyze_soil">Analyze Soil</string>
+    <string name="soil_type">Soil Type</string>
+    <string name="detailed_analysis">Detailed Analysis</string>
+    <string name="improvement_recommendations">Improvement Recommendations</string>
+    <string name="best_crops_for_soil">Best Crops for Your Soil</string>
+    <string name="test_again">Test Again</string>
+    
+    <!-- Market -->
+    <string name="market_and_income">Market &amp; Income</string>
+    <string name="market_prices">Market Prices</string>
+    <string name="price_trends">Price Trends &amp; Forecasts</string>
+    <string name="income_comparison">Crop Income Comparison</string>
+    <string name="compare_profitability">Compare Profitability</string>
+    <string name="market_price_prediction">Market Price Prediction</string>
+    <string name="ai_price_predictions">AI Price Predictions</string>
+    <string name="nearby_mandi_prices">Nearby Mandi Prices</string>
+    
+    <!-- Income Comparison -->
+    <string name="profit_analysis">Profit Analysis per Acre</string>
+    <string name="cultivation_cost">Cultivation Cost</string>
+    <string name="expected_yield">Expected Yield</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="net_profit">Net Profit</string>
+    <string name="recommendation_summary">Recommendation Summary</string>
+    
+    <!-- Government Schemes -->
+    <string name="government_schemes">Government Schemes</string>
+    <string name="subsidies_benefits">Subsidies &amp; Benefits</string>
+    <string name="eligible_schemes">Eligible Schemes</string>
+    <string name="eligibility_criteria">Eligibility Criteria</string>
+    <string name="required_documents">Required Documents</string>
+    <string name="how_to_apply">How to Apply</string>
+    <string name="apply_online">Apply Online</string>
+    <string name="learn_more">Learn More</string>
+    
+    <!-- Expense Tracker -->
+    <string name="expense_tracker">Expense &amp; Profit Tracker</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="expenses">Expenses</string>
+    <string name="income">Income</string>
+    <string name="profit">Profit</string>
+    <string name="expense_breakdown">Expense Breakdown</string>
+    <string name="category_wise_expenses">Category-wise Expenses</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="season_summary">Season Summary</string>
+    
+    <!-- Crop Calendar -->
+    <string name="crop_calendar">Crop Calendar</string>
+    <string name="schedule_reminders">Schedule &amp; Reminders</string>
+    <string name="upcoming_tasks">Upcoming Tasks</string>
+    <string name="completed_tasks">Completed Tasks</string>
+    <string name="monthly_overview">Monthly Task Overview</string>
+    <string name="mark_complete">Mark Complete</string>
+    <string name="remind_me">Remind Me</string>
+    <string name="reminder_settings">Reminder Settings</string>
+    
+    <!-- Profile -->
+    <string name="profile">Profile</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="farm_statistics">Farm Statistics</string>
+    <string name="active_crops">Active Crops</string>
+    <string name="this_season">This Season</string>
+    <string name="tools_services">Tools &amp; Services</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    
+    <!-- Common -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="submit">Submit</string>
+    <string name="loading">Loading…</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="success">Success</string>
+    <string name="no_data">No data available</string>
+    
+    <!-- Hints -->
+    <string name="enter_phone">Enter your phone number</string>
+    <string name="enter_password">Enter your password</string>
+    <string name="enter_name">Enter your full name</string>
+    <string name="enter_village">Enter your village</string>
+    <string name="create_password">Create a password</string>
+    <string name="confirm_password_hint">Confirm your password</string>
+    
+    <!-- Messages -->
+    <string name="login_successful">Login successful!</string>
+    <string name="registration_successful">Registration successful! Please login.</string>
+    <string name="logout_confirmation">Are you sure you want to logout?</string>
+    <string name="network_error">Network error. Please try again.</string>
+    <string name="invalid_credentials">Invalid phone number or password</string>
+    
+    <!-- Units -->
+    <string name="temperature_unit">°C</string>
+    <string name="currency">₹</string>
+    <string name="per_acre">/acre</string>
+    <string name="per_quintal">/quintal</string>
+    <string name="kg_ha">kg/ha</string>
+    
+    <!-- Weather Conditions -->
+    <string name="sunny">Sunny</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="rainy">Rainy</string>
+    <string name="clear_sky">Clear Sky</string>
+    
+    <!-- App Info -->
+    <string name="app_version">v1.0</string>
+    <string name="copyright">© 2026 Smart Farming. All rights reserved.</string>
+    <string name="ai_powered_tag">AI-Powered Agriculture Advisory</string>
+</resources>
