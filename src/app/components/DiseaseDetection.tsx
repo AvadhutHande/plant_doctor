@@ -9,6 +9,7 @@ import { Badge } from './ui/badge';
 import { NavigableProps } from '../types';
 
 // ---------------------------------------------------------------------------
+<<<<<<< HEAD
 // Plant Doctor backend (FastAPI wrapping the HuggingFace model server-side)
 // Local dev default. Change to your deployed backend URL before shipping.
 // ---------------------------------------------------------------------------
@@ -16,6 +17,35 @@ const API_BASE_URL = 'http://localhost:8000';
 
 interface HFPrediction { label: string; score: number }
 
+=======
+// HuggingFace Inference API
+// Model trained on PlantVillage — 38 classes, 14 crop species
+// Free tier works without an API key (rate-limited).
+// ---------------------------------------------------------------------------
+const HF_MODEL = 'linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification';
+const HF_API_URL = `https://api-inference.huggingface.co/models/${HF_MODEL}`;
+
+interface HFPrediction { label: string; score: number }
+
+async function callHuggingFace(blob: Blob, apiKey?: string): Promise<HFPrediction[]> {
+  const headers: Record<string, string> = {};
+  if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
+
+  const res = await fetch(HF_API_URL, {
+    method: 'POST',
+    headers,
+    body: blob,
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    if (res.status === 503) throw new Error('Model is loading — please retry in ~20 seconds.');
+    throw new Error((err as { error?: string }).error ?? `HuggingFace API error ${res.status}`);
+  }
+  return res.json();
+}
+
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
 // ---------------------------------------------------------------------------
 // Offline / sandbox fallback: realistic simulated results
 // ---------------------------------------------------------------------------
@@ -178,6 +208,7 @@ export default function DiseaseDetection({ onBack }: NavigableProps) {
     setError('');
     setIsSimulated(false);
 
+<<<<<<< HEAD
     // Call our own backend (FastAPI), which loads the model server-side.
     // This avoids the CORS/rate-limit/cold-start issues of calling
     // HuggingFace's public Inference API directly from the browser.
@@ -191,10 +222,25 @@ export default function DiseaseDetection({ onBack }: NavigableProps) {
       const res = await fetch(`${API_BASE_URL}/predict`, {
         method: 'POST',
         body: formData,
+=======
+    // Try real API first (with 15-second timeout)
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 15000);
+
+      const headers: Record<string, string> = {};
+      if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
+
+      const res = await fetch(HF_API_URL, {
+        method: 'POST',
+        headers,
+        body: imageBlob,
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
         signal: controller.signal,
       });
       clearTimeout(timer);
 
+<<<<<<< HEAD
       if (!res.ok) {
         throw new Error(`API_ERROR_${res.status}`);
       }
@@ -213,6 +259,28 @@ export default function DiseaseDetection({ onBack }: NavigableProps) {
       // Backend unreachable (e.g. not running yet) → fall back to simulation
       // so the UI still demonstrates the flow. Remove this fallback once
       // your backend is deployed and reliably reachable.
+=======
+      if (res.status === 503) {
+        throw new Error('MODEL_LOADING');
+      }
+      if (!res.ok) {
+        throw new Error(`API_ERROR_${res.status}`);
+      }
+      const data: HFPrediction[] = await res.json();
+      setPredictions(data.slice(0, 3));
+      setIsSimulated(false);
+      setStage('done');
+    } catch (err) {
+      const msg = (err as Error).message;
+
+      if (msg === 'MODEL_LOADING') {
+        setError('Model is loading on HuggingFace servers. Please wait ~20 seconds and retry.');
+        setStage('error');
+        return;
+      }
+
+      // Any network / CORS / sandbox failure → fall back to simulation
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
       const simulated = simulateAnalysis();
       setPredictions(simulated);
       setIsSimulated(true);

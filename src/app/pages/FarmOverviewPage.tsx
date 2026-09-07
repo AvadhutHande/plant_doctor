@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useProfile } from '../contexts/ProfileContext';
 import { useFields } from '../contexts/FieldsContext';
+<<<<<<< HEAD
 import type { Field } from '../types';
+=======
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
 import { Sprout, ChevronRight, ChevronLeft, Minus, Plus, Check } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { toast } from 'sonner';
@@ -24,7 +27,11 @@ interface FieldSetup {
 export default function FarmOverviewPage() {
   const navigate = useNavigate();
   const { profile, updateProfile } = useProfile();
+<<<<<<< HEAD
   const { resetFields } = useFields();
+=======
+  const { addField, fields, removeField } = useFields();
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
 
   const [step, setStep] = useState<Step>('land');
   const [totalLand, setTotalLand] = useState('');
@@ -68,7 +75,30 @@ export default function FarmOverviewPage() {
   const handleFinish = () => {
     const land = parseFloat(totalLand);
 
+<<<<<<< HEAD
     const newFields: Field[] = fieldSetups.map((f, i) => {
+=======
+    // Update profile
+    updateProfile({
+      totalLand: land,
+      numFields: numPlots,
+    });
+
+    // Replace fields: remove all existing, add new ones
+    // (FieldsContext syncs numFields via useEffect, but we also set crops)
+    // We use updateProfile to trigger the sync, then patch crops via a workaround:
+    // Store crop setup in sessionStorage for the FieldsContext to pick up on mount
+    const cropMap: Record<string, string> = {};
+    const stageMap: Record<string, string> = {};
+    fieldSetups.forEach((f) => {
+      const isFallow = f.crop === 'Fallow (No crop)';
+      cropMap[f.name] = isFallow ? 'Fallow' : f.crop;
+      stageMap[f.name] = isFallow ? 'Fallow' : 'Sowing';
+    });
+
+    // Save field setup so FieldsContext initialises from it
+    const newFields = fieldSetups.map((f, i) => {
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
       const isFallow = f.crop === 'Fallow (No crop)';
       return {
         id: `field-setup-${Date.now()}-${i}`,
@@ -85,6 +115,7 @@ export default function FarmOverviewPage() {
       };
     });
 
+<<<<<<< HEAD
     // Push fields first so the numFields sync effect sees the correct count
     resetFields(newFields);
 
@@ -93,6 +124,14 @@ export default function FarmOverviewPage() {
 
     sessionStorage.setItem('farmOverviewSeen', 'true');
     navigate('/app/dashboard');
+=======
+    localStorage.setItem('farmerFields', JSON.stringify(newFields));
+    sessionStorage.setItem('farmOverviewSeen', 'true');
+
+    // Force reload fields context by reloading the app to the dashboard
+    navigate('/app/dashboard');
+    window.location.reload(); // cheap but effective to re-read localStorage
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
   };
 
   return (

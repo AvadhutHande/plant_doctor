@@ -149,10 +149,13 @@ export function FieldsProvider({ children }: { children: ReactNode }) {
     return fields.reduce((total, f) => total + f.area, 0);
   };
 
+<<<<<<< HEAD
   const resetFields = (newFields: Field[]) => {
     setFields(newFields);
   };
 
+=======
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
   return (
     <FieldsContext.Provider
       value={{
@@ -164,7 +167,10 @@ export function FieldsProvider({ children }: { children: ReactNode }) {
         clearCropFromField,
         getActiveFieldsCount,
         getTotalAreaInGuntha,
+<<<<<<< HEAD
         resetFields,
+=======
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
       }}
     >
       {children}

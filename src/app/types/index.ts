@@ -50,7 +50,10 @@ export interface FieldsContextType {
   clearCropFromField: (fieldId: string) => void;
   getActiveFieldsCount: () => number;
   getTotalAreaInGuntha: () => number;
+<<<<<<< HEAD
   resetFields: (newFields: Field[]) => void;
+=======
+>>>>>>> a84933492759ed5f5a2e13255c042afa53c1ee26
 }
 
 /**
